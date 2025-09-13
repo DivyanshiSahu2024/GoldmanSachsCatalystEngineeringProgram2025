@@ -1,0 +1,68 @@
+class Solution {
+
+    public boolean checkPalindromeFormation(String a, String b) {
+
+       
+
+        int n = a.length();
+
+       
+
+        // Check if the combined strings form a palindrome
+
+        return canFormPalindrome(a, b) || canFormPalindrome(b, a);
+
+    }
+
+   
+
+    private boolean canFormPalindrome(String a, String b) {
+
+        int n = a.length();
+
+        int left = 0, right = n - 1;
+
+       
+
+        // Move towards the center while characters match
+
+        while (left < right && a.charAt(left) == b.charAt(right)) {
+
+            left++;
+
+            right--;
+
+        }
+
+       
+
+        // Check if the remaining substring is a palindrome
+
+        return isPalindrome(a, left, right) || isPalindrome(b, left, right);
+
+    }
+
+   
+
+    private boolean isPalindrome(String s, int left, int right) {
+
+        while (left < right) {
+
+            if (s.charAt(left) != s.charAt(right)) {
+
+                return false;
+
+            }
+
+            left++;
+
+            right--;
+
+        }
+
+        return true;
+
+    }
+
+}
+
