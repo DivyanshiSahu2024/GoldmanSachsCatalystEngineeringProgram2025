@@ -1,0 +1,45 @@
+class Solution {
+
+    public String shiftingLetters(String s, int[] shifts) {
+
+        int n = s.length();
+
+        int[] cumulativeShifts = new int[n];
+
+       
+
+        // Calculate cumulative shifts from the end to the start
+
+        cumulativeShifts[n - 1] = shifts[n - 1];
+
+        for (int i = n - 2; i >= 0; i--) {
+
+            cumulativeShifts[i] = (cumulativeShifts[i + 1] + shifts[i]) % 26;
+
+        }
+
+       
+
+        char[] result = s.toCharArray();
+
+       
+
+        // Shift each character according to the cumulative shifts
+
+        for (int i = 0; i < n; i++) {
+
+            int shift = cumulativeShifts[i];
+
+            char c = result[i];
+
+            result[i] = (char) ((c - 'a' + shift) % 26 + 'a');
+
+        }
+
+       
+
+        return new String(result);
+
+    }
+
+}
