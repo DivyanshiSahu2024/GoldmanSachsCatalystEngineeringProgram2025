@@ -1,0 +1,46 @@
+// Simple Text Editor
+ 
+import java.io.*;
+import java.util.*;
+ 
+public class Solution {
+ 
+    public static void main(String[] args)throws IOException {
+        /* Enter your code here. Read input from STDIN. Print output to STDOUT. Your class should be named Solution. */
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+ 
+        int Q = Integer.parseInt(reader.readLine()); // Number of operations
+        Stack<String> stack=new Stack<>();
+        StringBuilder text=new StringBuilder();
+        List<String[]> operations = new ArrayList<>();
+ 
+        for (int i = 0; i < Q; i++) {
+            String line = reader.readLine();
+            operations.add(line.split(" ", 2)); // Split into operation and argument (if present)
+        }
+ 
+        for(String[] op:operations)
+        {
+            String type=op[0];
+            switch(type)
+            {
+                case "1":stack.push(text.toString());
+                        text.append(op[1]);
+                        break;
+                case "2":stack.push(text.toString());
+                         int k=Integer.parseInt(op[1]); 
+                         text.delete(text.length()-k,text.length());
+                         break;
+                case "3":int index=Integer.parseInt(op[1]); 
+                        System.out.println(text.charAt(index-1));    
+                        break;
+                case "4":if(!stack.isEmpty())
+                         {
+                            text=new StringBuilder(stack.pop());
+                         }   
+                         break;
+            }
+        }
+        reader.close();
+    }
+}
