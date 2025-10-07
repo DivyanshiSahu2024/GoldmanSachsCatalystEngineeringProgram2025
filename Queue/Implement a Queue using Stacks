@@ -1,4 +1,5 @@
 // Implement Queue using stacks 
+//https://leetcode.com/problems/implement-queue-using-stacks/
 class MyQueue {
     Stack<Integer> first;
     Stack<Integer> second;
