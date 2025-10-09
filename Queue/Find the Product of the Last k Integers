@@ -1,0 +1,36 @@
+//https://leetcode.com/problems/product-of-the-last-k-numbers/
+// Product of last k integers
+class ProductOfNumbers {
+    List<Integer> ans;
+    public ProductOfNumbers() {
+        ans=new ArrayList<>();
+        ans.add(1);
+    }
+ 
+    public void add(int num) {
+        if(num==0)
+        {
+            ans.clear();
+            ans.add(1);
+        }
+        else
+        {
+            int last=ans.get(ans.size()-1);
+            ans.add(last*num);
+        }
+    }
+ 
+    public int getProduct(int k) {
+        if(k>=ans.size())
+        return 0;
+        int n=ans.size();
+        return ans.get(n-1)/ans.get(n-1-k);
+    }
+}
+ 
+/**
+ * Your ProductOfNumbers object will be instantiated and called as such:
+ * ProductOfNumbers obj = new ProductOfNumbers();
+ * obj.add(num);
+ * int param_2 = obj.getProduct(k);
+ */
