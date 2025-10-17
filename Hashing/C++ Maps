@@ -1,0 +1,129 @@
+
+C++ Maps
+
+#include <cmath>
+
+#include <cstdio>
+
+#include <vector>
+
+#include <iostream>
+
+#include <set>
+
+#include <map>
+
+#include <algorithm>
+
+using namespace std;
+
+int main() {
+
+ /* Enter your code here. Read input from STDIN. Print output to STDOUT */  
+
+ int q;
+
+ cin >> q;
+
+ map<string,int> mpp;
+
+ for(int i=0;i<q;i++)
+
+ {
+
+  int type;
+
+  string name;
+
+  cin >> type >> name;
+
+  if(type==1)
+
+  {
+
+   int marks;
+
+   cin >> marks;
+
+   mpp[name]+=marks;
+
+  }
+
+  else if(type==2)
+
+  {
+
+   mpp[name]=0;
+
+  }
+
+  else if(type==3)
+
+  {
+
+   cout << mpp[name] << endl;
+
+  }
+
+ }
+
+ return 0;
+
+}
+
+Java Maps
+Java Maps
+
+/Complete this code or write your own from scratch
+
+import java.util.*;
+
+import java.io.*;
+
+class Solution{
+
+public static void main(String []argh)
+
+{
+
+Scanner in = new Scanner(System.in);
+
+int n=in.nextInt();
+
+in.nextLine();
+
+  Map<String,Integer> mpp=new HashMap<>();
+
+for(int i=0;i<n;i++)
+
+{
+
+String name=in.nextLine();
+
+int phone=in.nextInt();
+
+   mpp.put(name,phone);
+
+in.nextLine();
+
+}
+
+while(in.hasNext())
+
+{
+
+String s=in.nextLine();
+
+   if(!mpp.containsKey(s))
+
+   System.out.println("Not found");
+
+   else
+
+   System.out.println(s+"="+mpp.get(s));
+
+}
+
+}
+
+}
