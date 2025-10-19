@@ -1,0 +1,29 @@
+public static List<Integer> icecreamParlor(int m, List<Integer> arr) {
+
+  Map<Integer, Integer> map = new HashMap<>();
+
+  for (int i = 0; i < arr.size(); i++) {
+
+    int price = arr.get(i);
+
+    int complement = m - price;
+
+    if (map.containsKey(complement)) {
+
+      // Return 1-based indices
+
+      return Arrays.asList(map.get(complement) + 1, i + 1);
+
+    }
+
+    // Store current price and its index
+
+    map.put(price, i);
+
+  }
+
+  // The problem guarantees that a solution always exists
+
+  return new ArrayList<>();
+
+}
