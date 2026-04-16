@@ -1,1 +1,2 @@
 This repository curates my learning journey through the Goldman Sachs Catalyst Engineering Program 2025. This repository is created solely for educational and informational purposes. It is not affiliated with, endorsed by, or officially connected to Goldman Sachs or the Catalyst Engineering Program..
+![Certificate of Completion](./Divyanshi Sahu-CertificateofMerit_.jpg)
